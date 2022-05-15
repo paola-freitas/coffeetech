@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #49281A;
+    --color-secondary: #AB6832;
+    --color-background: #FFFFFF;
+    --color-background-secondary: #DFB78C;
+    --color-red: #B31800;
+    --color-grey: #AB8E76;
+}
+
+body, input, select {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.structure {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "icon"
+        "login"
+        "footer"
+    ;
+}
+
+.header {
+    grid-area: header;
+}
+
+.icon {
+    grid-area: icon;
+}
+
+.login {
+    grid-area: login;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+@media (max-widdth: 1200px){
+
+}
+
+@media (max-widdth: 1000px){
+
+}
+
+@media (max-widdth: 600px){
+
+}
+
