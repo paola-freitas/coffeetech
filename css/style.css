@@ -28,47 +28,59 @@ h3 {
     font-size: 25px;
 }
 
-.structure {
+a {
+    font-size: 15px;
+}
+
+div.structure {
     display: grid;
     grid-template-areas:
         "header"
-        "login"
-        "footer"
+        "content"
     ;
 }
 
-.header {
+header.header {
     grid-area: header;
     background: var(--color-primary);
-    width: 100%;
     height: 100px;
-    left: 0px;
-    top: 0px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.login {
-    grid-area: login;
+header.header img{
+    color: var(--color-background);
+    margin-left: 20px;
+    padding: 20px;
+}
+
+header.header img + img{
+    margin-left: 20px;
+}
+
+section.content {
+    grid-area: content;
     display: flex;
     align-items: center;
     padding: 30px 10%;
     
 }
 
-.login img {
+section.content img {
     width: 600px;
     left: 120px;
     padding-top: 100px;
 }
 
-.login div {
+div.info {
     width: 120px;
     height: 40px;
     left: 900px;
     padding-left: 200px;
 }
 
-.login input {
+div.info input {
     background-color: var(--color-grey);
     border-color: var(--color-grey);
     color: var(--color-background);
@@ -78,20 +90,28 @@ h3 {
     border-style: dashed;
 }
 
-.login button{
+div.enter {
+    color: var(--color-red);
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+a.enter-button{
     display: absolute;
     background-color: var(--color-primary);
     color: var(--color-background);
     border-style: hidden;
     font-size: 25px;
-    padding: 5px 32px;    
-    margin-top: 320px;
+    padding: 5px 30px;  
+    margin-left: 50px;
     float: right;
+    text-decoration: none;
 }
 
+section.dashboard{
+    align-items: center;
 
-.footer {
-    grid-area: footer;
 }
 
 @media (max-widdth: 1200px){
