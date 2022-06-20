@@ -37,6 +37,7 @@ div.structure {
     grid-template-areas:
         "header"
         "content"
+        "dashboard"
     ;
 }
 
@@ -109,9 +110,26 @@ a.enter-button{
     text-decoration: none;
 }
 
-section.dashboard{
+div.dropdown {
+    display: flex;
     align-items: center;
+    padding-top: 30px;
+    padding-left: 40%;
+}
 
+button.btn {
+    font-size: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+    border-style: hidden;
+}
+
+ul.dropdown-menu{
+    background-color: var(--color-background-secondary);
+    display: absolute;
+    align-items: center;
+    margin-left: 40%;
 }
 
 @media (max-widdth: 1200px){
