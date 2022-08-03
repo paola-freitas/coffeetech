@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <meta name-="author" content="Paola Freitas"> 
     <meta name="description" content="Aplicação CoffeeTech">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +20,8 @@
 <body>
     <div class="structure">
         <header class="header">
-            <img src="/images/menu.png">
-            <img src="/images/logout.png">
+            <img src="/images/menu.png" style="width: 80px;">
+            <a href="/index.html"> <img src="/images/logout.png" style="width: 80px;"> </a>
         </header>
         <section class="dashboard">
             <div class="dropdown">
@@ -33,12 +34,200 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col"> teste </div>
-                    <div class="col"> teste </div>
+                    <div class="col-md-4">
+                        <h3 style="color: #FFFFFF; text-align: center;">Secador 01</h3>
+                        <img class="fire" src="/images/fire.png">
+                        <h4 style="color: var(--color-primary); text-align: left;"> Temperatura: <b> 25°C </b> </h4> 
+                        <h4 style="color: var(--color-primary); text-align: left;"> Umidade: <b> 9.3% </b> </h4>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-left: 50%;
+                        font-size: 15px;">Mais informações</button>
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">Secador 01</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <canvas id="secador01" style="width:100%;max-width:600px"></canvas>
+                                        <script>
+                                            var xValues = [00,01,02,03,04,05,06,07,08,09,10];
+                                            var yValues = [12.5,12,10.7,10.5,10.3,10,10,9.8,9.8,9.4,9.3];
+                                                
+                                            new Chart("secador01", {
+                                                type: "line",
+                                                data: {
+                                                labels: xValues,
+                                                datasets: [{
+                                                    fill: false,
+                                                    lineTension: 0,
+                                                    backgroundColor: "rgba(73,40,26,1)",
+                                                    borderColor: "rgba(223,183,140,1)",
+                                                    data: yValues
+                                                }]
+                                                },
+                                                options: {
+                                                legend: {display: false},
+                                                scales: {
+                                                    yAxes: [{
+                                                        ticks: {min: 9, max:13},
+                                                        scaleLabel: {
+                                                            display: true,
+                                                            labelString: 'Umidade (%)'
+                                                        }
+                                                    }],
+                                                    xAxes: [{
+                                                        scaleLabel: {
+                                                            display: true,
+                                                            labelString: 'Tempo (horas)'
+                                                        }
+                                                    }],
+                                                }
+                                                }
+                                            });
+                                        </script>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Temperatura: <b> 25°C </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Umidade: <b> 9.3% </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Capacidade do secador: <b> 75% </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Local: <b> Pouso Alegre - MG </b></h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <h3 style="color: #FFFFFF; text-align: center;">Secador 02</h3>
+                        <img class="fire" src="/images/fire.png">
+                        <h4 style="color: var(--color-primary); text-align: left;"> Temperatura: <b> 24.8°C </b> </h4> 
+                        <h4 style="color: var(--color-primary); text-align: left;"> Umidade: <b> 10.1% </b> </h4>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-left: 50%; font-size: 15px;">Mais informações</button>
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">Secador 01</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <canvas id="secador02" style="width:100%;max-width:600px"></canvas>
+                                        <script>
+                                            var xValues = [00,01,02,03,04,05,06,07,08,09,10];
+                                            var yValues = [12.5,12,10.7,10.5,10.3,10,10,9.8,9.8,9.4,9.3];
+                                            
+                                            new Chart("secador02", {
+                                                type: "line",
+                                                data: {
+                                                labels: xValues,
+                                                datasets: [{
+                                                    fill: false,
+                                                    lineTension: 0,
+                                                    backgroundColor: "rgba(73,40,26,1)",
+                                                    borderColor: "rgba(223,183,140,1)",
+                                                    data: yValues
+                                                }]
+                                                },
+                                                options: {
+                                                    legend: {display: false},
+                                                    scales: {
+                                                        yAxes: [{
+                                                            ticks: {min: 9, max:13},
+                                                            scaleLabel: {
+                                                                display: true,
+                                                                labelString: "Umidade (%)"
+                                                            }
+                                                        }],
+                                                        xAxes: [{
+                                                            scaleLabel: {
+                                                                display: true,
+                                                                labelString: "Tempo (horas)"
+                                                            }
+                                                        }]
+                                                    }
+                                                }
+                                            });
+                                        </script>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Temperatura: <b> 25.1°C </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Umidade: <b> 9.8% </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Capacidade do secador: <b> 75% </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Local: Pouso Alegre - MG</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="col-md-4"> 
+                        <h3 style="color: #FFFFFF; text-align: center;">Secador 03</h3>
+                        <img class="fire" src="/images/fire.png" style="align-self: center;">
+                        <h4 style="color: var(--color-primary); text-align: left;"> Temperatura: <b> 25°C </b> </h4> 
+                        <h4 style="color: var(--color-primary); text-align: left;"> Umidade: <b> 9.3% </b> </h4>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-left: 50%; font-size: 15px;"> Mais informações </button>
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">Secador 01</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <canvas id="secador03" style="width:100%;max-width:600px"></canvas>
+                                        <script>
+                                            var xValues = [00,01,02,03,04,05,06,07,08,09,10];
+                                            var yValues = [12.5,12,10.7,10.5,10.3,10,10,9.8,9.8,9.4,9.3];
+                                            
+                                            new Chart("secador03", {
+                                                type: "line",
+                                                data: {
+                                                labels: xValues,
+                                                datasets: [{
+                                                    fill: false,
+                                                    lineTension: 0,
+                                                    backgroundColor: "rgba(73,40,26,1)",
+                                                    borderColor: "rgba(223,183,140,1)",
+                                                    data: yValues
+                                                }]
+                                                },
+                                                options: {
+                                                legend: {display: false},
+                                                scales: {
+                                                    yAxes: [{
+                                                        ticks: {min: 9, max:13},
+                                                        scaleLabel: {
+                                                            display: true,
+                                                            labelString: 'Umidade (%)'
+                                                        }
+                                                    }],
+                                                    xAxes: [{
+                                                        scaleLabel: {
+                                                            display: true,
+                                                            labelString: 'Tempo (horas)'
+                                                        }
+                                                    }],
+                                                }
+                                                }
+                                            });
+                                        </script>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Temperatura: <b> 25°C </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Umidade: <b> 9.3% </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Capacidade do secador: <b> 75% </b> </h4>
+                                        <h4 style="color: var(--color-primary); text-align: left;">Local: Pouso Alegre - MG</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-        </div>
+        </section>
     </div>
-    
 </body>
 </html>

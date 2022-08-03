@@ -28,8 +28,14 @@ h3 {
     font-size: 25px;
 }
 
+h4 {
+    font-size: 15px;
+    font-style: bold;
+}
+
 a {
     font-size: 15px;
+    color: #FFFFFF;
 }
 
 div.structure {
@@ -85,10 +91,11 @@ div.info input {
     background-color: var(--color-grey);
     border-color: var(--color-grey);
     color: var(--color-background);
-    padding-left: 100px;
+    padding-left: 10px;
     height: 30px;
     margin-bottom: 10px;
     border-style: dashed;
+    font-size: 20px;;
 }
 
 div.enter {
@@ -114,7 +121,7 @@ div.dropdown {
     display: flex;
     align-items: center;
     padding-top: 30px;
-    padding-left: 40%;
+    padding-left: 45%;
 }
 
 button.btn {
@@ -125,11 +132,42 @@ button.btn {
     border-style: hidden;
 }
 
-ul.dropdown-menu{
+ul.dropdown-menu {
     background-color: var(--color-background-secondary);
     display: absolute;
     align-items: center;
-    margin-left: 40%;
+    margin-left: 45%;
+}
+
+div.row {
+    background-color: var(--color-background);
+    display: flex;
+    margin-top: 30px;
+    border-radius: 15px;
+    height: auto;
+}
+
+div.col-md-4 {
+    background-color: var(--color-background-secondary); 
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+img.fire {
+    padding: 20px;
+    margin-left: 20%;
+    size: 120px;
+    font-size: 120px;
+}
+
+div.row col-md-4  + col-md-4 {
+    margin: 20px;
+}
+
+div.modal-content {
+    background-color: #f4eae1;
 }
 
 @media (max-widdth: 1200px){
